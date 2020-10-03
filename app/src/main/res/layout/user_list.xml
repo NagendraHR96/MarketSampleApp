@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="user"
+            type="com.neory.marketsimplifieddemoapp.ui.model.JsonObjectResult" />
+    </data>
+<androidx.cardview.widget.CardView
+android:layout_width="match_parent"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="2dp"
+    android:layout_margin="1dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/twitter_avatar"
+        android:layout_width="90dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+    <TextView
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="3dp"
+        android:id="@+id/username"
+        android:text="@{user.owner.login}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_marginTop="3dp"
+            android:id="@+id/description"
+            android:text="@{user.description}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:singleLine="true"
+                    android:id="@+id/comment"
+                    android:layout_width="match_parent"
+                    android:hint="write a review"
+                    android:text="@={user.owner.comment}"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+</layout>
